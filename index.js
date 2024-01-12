@@ -13,7 +13,6 @@ app.use(express.static("public"));
 app.get("/", async (req, res) => {
     try {
     const result = await axios.get(API_URL);
-    console.log(result.data);
     res.render("index.ejs", { setup: result.data.setup, delivery: result.data.delivery });
     } catch (error) {
         console.log("An error happened: " + error.response.data);
@@ -25,7 +24,6 @@ app.get("/", async (req, res) => {
 app.get("/get-joke", async (req, res) => {
     try {
     const result = await axios.get(API_URL);
-    console.log(result.data);
     res.render("index.ejs", { setup: result.data.setup, delivery: result.data.delivery });
     } catch (error) {
         console.log("An error happened: " + error.response.data);
